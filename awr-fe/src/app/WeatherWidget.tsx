@@ -4,7 +4,7 @@ import { WeatherWidgetProps } from "./WeatherInterface";
 import { Card } from "antd";
 
 export default function WeatherWidget({ lat, lon, title }: WeatherWidgetProps) {
-  const [weatherData, setWeatherData] = useState<any>(null);
+  const [weatherData, setWeatherData] = useState(null);
   const [script, setScript] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
@@ -33,7 +33,7 @@ export default function WeatherWidget({ lat, lon, title }: WeatherWidgetProps) {
 
         setWeatherData(flattened);
         setScript(typeof json?.script === "string" ? json.script : "");
-      } catch (e: any) {
+      } catch (e) {
         setErr(e?.message || "Error");
       } finally {
         setLoading(false);

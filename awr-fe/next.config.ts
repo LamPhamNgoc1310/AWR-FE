@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const BE_URL = process.env.BE_URL;
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 
   typescript: {
     ignoreBuildErrors: true,

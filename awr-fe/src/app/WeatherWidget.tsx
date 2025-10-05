@@ -16,7 +16,7 @@ export default function WeatherWidget({ lat, lon, title }: WeatherWidgetProps) {
         setErr(null);
 
         // Minimal: BE handles OWM + HF, FE just calls one endpoint
-        const url = `http://localhost:4000/generate?lat=${lat}&lon=${lon}`;
+        const url = `/generate?lat=${lat}&lon=${lon}`;
         const res = await fetch(url, { cache: "no-store" });
         const json = await res.json();
 

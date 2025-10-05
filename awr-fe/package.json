@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "antd": "^5.27.4",
     "dotenv": "^17.2.2",
     "next": "15.3.3",
     "postcss": "^8.5.6",

@@ -71,29 +71,19 @@ export default function WeatherWidget({ lat, lon, title }: WeatherWidgetProps) {
 
 
   return (
-    <div className="w-full max-w-md space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <div className="mb-2 flex items-center justify-between">
-        <h2 className="text-base font-semibold text-slate-700">{title}</h2>
-      </div>
-
-      <div className="rounded-xl bg-slate-50 p-4">
+    <Card className="w-full max-w-md space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <h2 className="text-base font-semibold text-slate-700">{title}</h2>
+      <Card className="rounded-xl bg-slate-50 p-4">
         <div className="text-xs uppercase tracking-wide text-slate-500">Description</div>
         <div className="text-xl font-semibold text-slate-800 capitalize">{description}</div>
-      </div>
+      </Card>
 
       <div className="grid grid-cols-2 gap-3">
-        {/* <Info label="Temp" value={fmt(temp, " °C")} />
-        <Info label="Humidity" value={fmt(humidity, " %")} />
-        <Info label="Rain (daily)" value={fmt(rain, " mm")} />
-        <Info label="Wind Speed" value={fmt(wind_speed, " m/s")} />
-        <Info label="Clouds" value={fmt(clouds, " %")} /> */}
-        
         <Card title="Temperature" variant="borderless"><span className="text-xl">{temp}°C</span></Card>
         <Card title="Humidity" variant="borderless"><span className="text-xl">{humidity}%</span></Card>
         <Card title="Rain" variant="borderless"><span className="text-xl">{rain}mm</span></Card>
         <Card title="Wind speed" variant="borderless"><span className="text-xl">{wind_speed}m/s</span></Card>
         <Card title="Clouds" variant="borderless"><span className="text-xl">{clouds}%</span></Card>
-  
       </div>
 
       {/* section for script */}
@@ -103,7 +93,7 @@ export default function WeatherWidget({ lat, lon, title }: WeatherWidgetProps) {
           {script || "—"}
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
 

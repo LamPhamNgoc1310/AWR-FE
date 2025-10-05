@@ -1,7 +1,6 @@
 // pages/index.jsx (or any page)
 import WeatherWidget from "./WeatherWidget";
 
-
 export default function Home() {
   return (
     <main className="flex min-h-screen items-start justify-center bg-slate-100 p-6">

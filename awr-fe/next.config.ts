@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
       {
         source: '/generate',
         destination: `${BE_URL}/generate`,
+      },
+      {
+        source: '/weather-info',
+        destination: `${BE_URL}/weather-info`
       }
     ]
   }

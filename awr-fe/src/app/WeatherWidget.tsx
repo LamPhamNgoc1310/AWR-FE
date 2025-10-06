@@ -43,7 +43,7 @@ export default function WeatherWidget({ lat, lon, title }: WeatherWidgetProps) {
     return (
         <div className="w-full max-w-md rounded-2xl border border-grey-200 bg-white p-5 shadow-sm">
             <div className="mb-3 h-5 w-40 animate-pulse rounded bg-grey-200" ></div>
-            <div>Fetching the API...Please wait</div>
+            <div className="text-emerald-500">Fetching the API...Please wait</div>
         </div>
     )
   }

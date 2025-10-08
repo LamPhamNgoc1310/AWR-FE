@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { WeatherWidgetProps } from "./WeatherInterface";
 import { Card } from "antd";
-import ScriptBox from "./ScriptBox";
+// import ScriptBox from "./ScriptBox";
+import TimeButton from "./TimeButton";
 
 export default function WeatherWidget({ lat, lon, title }: WeatherWidgetProps) {
   const [weatherData, setWeatherData] = useState<any>({});
@@ -16,7 +17,6 @@ export default function WeatherWidget({ lat, lon, title }: WeatherWidgetProps) {
         setLoading(true);
         setErr(null);
 
-        // Minimal: BE handles OWM + HF, FE just calls one endpoint
         const url = `/weather-info?lat=${lat}&lon=${lon}`;
         const result = await fetch(url, { cache: "no-store" });
         const weather_json = await result.json();
@@ -56,7 +56,7 @@ export default function WeatherWidget({ lat, lon, title }: WeatherWidgetProps) {
     )
   }
 
-  // destructure data
+  // destructure data maybe put it in the first try block: note
   const { description, temp, humidity, rain, wind_speed, clouds } = weatherData || {};
 
   return (
@@ -76,7 +76,8 @@ export default function WeatherWidget({ lat, lon, title }: WeatherWidgetProps) {
       </div>
 
       {/* section for script */}
-      <ScriptBox lat={lat} lon={lon}/>
+      {/* <ScriptBox lat={lat} lon={lon}/> */}
+      <TimeButton lat={lat} lon={lon} />
     </Card>
   );
 }

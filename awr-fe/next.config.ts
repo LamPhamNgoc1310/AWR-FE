@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
       {
         source: '/weather-info',
         destination: `${BE_URL}/weather-info`
+      },
+      {
+        source: '/schedule',
+        destination: `${BE_URL}/schedule`
       }
     ]
   }
